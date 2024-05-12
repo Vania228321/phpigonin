@@ -1,0 +1,459 @@
+* {
+    font-family: 'Lora', sans-serif;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Header */
+
+.header-inner {
+    border: 2px solid #e0dfdf;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.header-middle {
+    margin-top: 18px;
+}
+
+.header-contact {
+    display: flex;
+    margin-bottom: 13px;
+}
+
+.header-phone {
+    margin-right: 36px;
+    color: #797979;
+}
+
+.header-address {
+    color: #797979;
+    margin-top: 0px;
+}
+
+.header-search {
+    margin-bottom: 18px;
+    display: flex;
+}
+
+.header-input {
+    display: inline-block;
+    height: 36px;
+    width: 350px;
+    padding-left: 15px;
+    background-color: #F2F2F2;
+    outline: none;
+    font-size: 15px;
+    border-color: #e9e9e9;
+}
+
+.header-button {
+    display: inline-block;
+    color: #fff;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 27px;
+    padding-right: 27px;
+    background-color: #63A103;
+    transition: background-color .3s linear;
+}
+
+.header-button:hover {
+    background-color: #4c7c03;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu {
+    position: relative;
+    margin-left: 20px;
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.header-menu::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    transition: .5s;
+    height: 2px;
+    background: #000;
+}
+
+.header-menu:hover:after {
+    width: 100%;
+}
+
+.header-menu:first-child {
+    margin-left: 0;
+}
+
+.header-icons {
+    display: flex;
+    margin-top: 26px;
+    margin-right: 22px;
+}
+
+.sign-in {
+    margin-left: 11px;
+}
+
+.sign-up {
+    margin-left: 37.5px;
+}
+
+.header-icon {
+    margin-left: 26px;
+}
+
+/* End Header */
+
+.exit {
+    margin-top: 48px;
+    margin-bottom: 40px;
+}
+
+.exit a {
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+}
+
+.exit p {
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+}
+
+
+/* Intro */
+
+.intro-inner {
+    display: flex;
+}
+
+.intro-choice-categories {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.intro-choice-categories a {
+    border: 1px solid #797979;
+    width: 208px;
+    padding: 5px 0 5px 6px;
+    position: relative;
+}
+
+.fa.fa-caret-right {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+}
+
+.intro-title {
+    font-size: 25px;
+    color: #333;
+    margin: 20px 0 30px 0;
+}
+
+.intro-products {
+    margin-left: 104px;  
+    font-size: 20px;
+}
+
+.intro-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 119px;
+    margin-bottom: 31px;
+}
+
+.card {
+    width: 225px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 25px;
+  }
+  
+  /* При наведении на карточку - меняем цвет тени */
+  .card:hover {
+    box-shadow: 4px 8px 16px rgba(3, 194, 82, 0.2);
+  }
+  
+  .card__top {
+    flex: 0 0 180px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+  }
+  
+  /* Контейнер для картинки */
+  .card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+    transition: 0.2s;
+  }
+  
+  /* Размещаем скидку на товар относительно изображения */
+  .card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #63A103;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+  }
+  
+  .card__prices {
+    display: flex;
+    margin-bottom: 10px;
+    flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
+  }
+  
+  .card__price::after {
+    content: "₽";
+    margin-left: 4px;
+    position: relative;
+  }
+  
+  .card__price--discount {
+    font-weight: 700;
+    font-size: 19px;
+    color: #414141;
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  
+  .card__price--discount::before {
+    content: "Со скидкой";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+  }
+  
+  .card__price--common {
+    font-weight: 400;
+    font-size: 17px;
+    color: #606060;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+  }
+  
+  .card__price--common::before {
+    content: "Обычная";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+  }
+  
+  .card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #414141;
+  }
+  
+  .card__title:hover {
+    color: #63A103;
+  }
+  
+  .card__add {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #70c05b;
+    padding: 9px;
+    text-align: center;
+    border: 1px solid #70c05b;
+    border-radius: 4px;
+    cursor: pointer; 
+    transition: 0.2s;
+  }
+  
+  .card__add:hover {
+    border: 1px solid #63A103;
+    background-color: #63A103;
+    color: #fff;
+  }
+
+.sex {
+    margin-top: 10px;
+}
+
+.sex .name {
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+.sex input {
+    margin-bottom: 10px;
+}
+
+.sex label {
+    color: #333;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+/* Info */
+
+.info {
+    margin-top: 100px;
+    margin-bottom: 75px;
+}
+
+.info-text {
+    color: #333;
+    font-size: 12px;
+}
+
+.last-text {
+    opacity: .3;
+    margin-bottom: 20px;
+}
+
+.info-btn {
+    color: #333;
+    font-size: 15px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+
+/* Info End */
+
+
+.footer {
+    background-color: #3F4F4F;
+    min-height: 324px;
+}
+
+.footer-blocks {
+    padding-top: 30px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.footer-block:last-child {
+    float: right;
+}
+
+.footer-title {
+    padding-bottom: 45px;
+}
+
+a.footer-btn {
+    display: block;
+    padding-bottom: 10px;
+    transition: .2s linear;
+}
+
+a.footer-btn:hover {
+    color: #929292;
+}
+
+.footer a, div {
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer-icons {
+    padding-bottom: 20px;
+}
+
+.footer-icon {
+    padding-right: 10px;
+}
+
+.footer-text {
+    padding-bottom: 10px;
+}
+
+.footer-block.vertical-line {
+    height: 200px;
+    width: 1px;
+    background-color: #fff;
+}
+
+.footer-copy {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.footer-copy p {
+    margin-left: 11px;    
+    margin-top: 17px;
+}
+
+.fa-copyright {
+    padding-top: 20px;
+    font-size: 18px;
+}

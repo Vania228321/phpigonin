@@ -1,0 +1,638 @@
+* {
+    font-family: 'Lora', sans-serif;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Header */
+
+.header-inner {
+    border: 2px solid #e0dfdf;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.header-middle {
+    margin-top: 18px;
+    margin-left: 40px;
+}
+
+.header-contact {
+    display: flex;
+    margin-bottom: 13px;
+}
+
+.header-phone {
+    margin-right: 36px;
+    color: #797979;
+}
+
+.header-address {
+    color: #797979;
+    margin-top: 0px;
+}
+
+.header-search {
+    margin-bottom: 18px;
+    display: flex;
+}
+
+.header-input {
+    display: inline-block;
+    height: 36px;
+    width: 350px;
+    padding-left: 15px;
+    background-color: #F2F2F2;
+    outline: none;
+    font-size: 15px;
+    border-color: #e9e9e9;
+}
+
+.header-button {
+    display: inline-block;
+    color: #fff;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 27px;
+    padding-right: 27px;
+    background-color: #63A103;
+    transition: background-color .3s linear;
+}
+
+.header-button:hover {
+    background-color: #4c7c03;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu {
+    position: relative;
+    margin-left: 20px;
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.header-menu::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    transition: .5s;
+    height: 2px;
+    background: #000;
+}
+
+.header-menu:hover:after {
+    width: 100%;
+}
+
+.header-menu:first-child {
+    margin-left: 0;
+}
+
+.header-icons {
+    display: flex;
+    margin-top: 26px;
+    margin-right: 22px;
+}
+
+.sign-in {
+    margin-left: 11px;
+}
+
+.sign-up {
+    margin-left: 37.5px;
+}
+
+.header-icon {
+    margin-left: 26px;
+}
+
+/* End Header */
+
+/* Intro */
+
+.intro-inner {
+    display: flex;
+}
+
+.intro-categories {
+    margin-top: 11px;
+}
+
+.intro-choice-categories {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.intro-choice-categories a {
+    border: 1px solid #797979;
+    width: 208px;
+    padding: 5px 0 5px 6px;
+    position: relative;
+}
+
+.fa.fa-caret-right {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+}
+
+.intro-main__button {
+    cursor: pointer;
+    background-color: #69AA00;
+    border: 1px solid #000;
+    color: #fff;
+    padding-left: 37px;
+    padding-right: 37px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-top: -12px;
+    position: relative;
+}
+
+.intro-game {
+    font-size: 14px;
+    border: 1px solid #3F4F4F;
+    background-color: #3F4F4F;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color .2s linear;
+}
+
+.intro-game:hover {
+    background-color: #1a2020e3;
+}
+
+.fa.fa-bars {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+}
+
+.fa.fa-caret-up {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.fa.fa-caret-down {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.intro-title {
+    color: #333;
+    font-size: 25px;
+    margin: 20px 0 30px 0;
+}
+
+.intro-products {
+    margin-left: 104px;  
+}
+
+.intro-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 119px;
+    margin-bottom: 31px;
+}
+
+.card {
+    width: 225px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 25px;
+  }
+  
+  /* При наведении на карточку - меняем цвет тени */
+  .card:hover {
+    box-shadow: 4px 8px 16px rgba(3, 194, 82, 0.2);
+  }
+  
+  .card__top {
+    flex: 0 0 180px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+  }
+  
+  /* Контейнер для картинки */
+  .card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+    transition: 0.2s;
+  }
+  
+  /* Размещаем скидку на товар относительно изображения */
+  .card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #63A103;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+  }
+  
+  .card__prices {
+    display: flex;
+    margin-bottom: 10px;
+    flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
+  }
+  
+  .card__price::after {
+    content: "₽";
+    margin-left: 4px;
+    position: relative;
+  }
+  
+  .card__price--discount {
+    font-weight: 700;
+    font-size: 19px;
+    color: #414141;
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  
+  .card__price--discount::before {
+    content: "Со скидкой";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+  }
+  
+  .card__price--common {
+    font-weight: 400;
+    font-size: 17px;
+    color: #606060;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+  }
+  
+  .card__price--common::before {
+    content: "Обычная";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+  }
+  
+  .card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #414141;
+  }
+  
+  .card__title:hover {
+    color: #63A103;
+  }
+  
+  .card__add {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #70c05b;
+    padding: 9px;
+    text-align: center;
+    border: 1px solid #70c05b;
+    border-radius: 4px;
+    cursor: pointer; 
+    transition: 0.2s;
+  }
+  
+  .card__add:hover {
+    border: 1px solid #63A103;
+    background-color: #63A103;
+    color: #fff;
+  }
+
+/* Блок Mailing */
+
+.mailing {
+    min-height: 324px;
+    background-color: #F2F2F2;
+}
+
+.mailing-title {
+    color: #333333;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 36px;
+}
+
+.mailing-input {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.mailing-text {
+    width: 360px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #D7D7D7;
+    border-radius: 5px;
+    color: #333333;
+    padding: 0 10px;
+}
+
+.mailing-text::placeholder {
+    color: #AAAAAA;
+}
+
+a.mailing-send {
+    background-color: #63A103;
+    padding: 9px 25px;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color .3s linear;
+}
+
+a.mailing-send:hover {
+    background-color: #4c7c03;
+}
+
+/* Reviews */
+
+.reviews {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    min-height: 395px;
+    background-color: #F2F2F2;
+}
+
+.reviews-users {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.reviews-icon {
+    margin-left: 95px;
+    margin-bottom: 20px;
+}
+
+.reviews-title {
+    padding-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 36px;
+    color: #333333;
+}
+
+.reviews-text {
+    max-width: 264px;
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+
+/* Insta */
+
+.insta {
+    min-height: 557px;
+    background-color: #F2F2F2;
+}
+
+.insta-top {
+    padding-top: 30px;
+}
+
+a.insta-title {
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    color: #333333;
+}
+
+.insta-cards {
+    display: flex;  
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* Partners */
+
+.partners {
+    margin: 30px 0;
+    background-color: #F2F2F2;
+}
+
+.partners-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.partners-title {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+
+/* Slick Slider */
+
+.slider {
+    position: relative;
+    max-width: 800px;
+    overflow: hidden;
+    margin: 0 20px;
+    margin-bottom: 40px;
+}
+
+.slider__line {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    transition: all 1s;
+}
+
+.slider__btn-prev {
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.slider__btn-next {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.slider__wrapper {
+    display: flex;
+    column-gap: 10px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider__dot {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #524336;
+}
+
+.slider__dot:hover {
+    background-color: #BB8C5F;
+}
+
+.active-dot {
+    background-color: #BB8C5F;
+}
+
+.slider__btn-next img, .slider__btn-prev img {
+    width: 50px;
+}
+
+/* Конец Слик Слайдера */
+
+
+/* Footer */
+
+.footer {
+    background-color: #3F4F4F;
+    min-height: 324px;
+}
+
+.footer-blocks {
+    padding-top: 30px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.footer-block:last-child {
+    float: right;
+}
+
+.footer-title {
+    padding-bottom: 45px;
+}
+
+a.footer-btn {
+    display: block;
+    padding-bottom: 10px;
+    transition: .2s linear;
+}
+
+a.footer-btn:hover {
+    color: #929292;
+}
+
+.footer a, div {
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer-icons {
+    padding-bottom: 20px;
+}
+
+.footer-icon {
+    padding-right: 10px;
+}
+
+.footer-text {
+    padding-bottom: 10px;
+}
+
+.footer-block.vertical-line {
+    height: 200px;
+    width: 1px;
+    background-color: #fff;
+}
+
+.footer-copy {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.footer-copy p {
+    margin-left: 11px;    
+    margin-top: 17px;
+}
+
+.fa-copyright {
+    padding-top: 20px;
+    font-size: 18px;
+}
