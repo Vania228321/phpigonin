@@ -11,5 +11,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run PHP Lint
-        run: find . -name \*.php -exec php -l {} \;
+      - name: Lint PHP files
+        run: find . -name "*.php" -exec php -l {} \;
