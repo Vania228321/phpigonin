@@ -1,7 +1,21 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+    branches:
+      - master
 jobs:
-  Explore-Github-Actions:
+  build:
     runs-on: windows-latest
+
     steps:
-      - run: echo "Test..."
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.3'
+          extensions: mbstring, xml
+
+      - name: Run PHP Lint
+        run: find . -name \*.php -exec php -l {} \;
