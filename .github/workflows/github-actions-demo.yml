@@ -12,4 +12,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Lint PHP files
-        run: find . -name "*.php" -exec php -l {} \;
+        run: Get-ChildItem -Path . -Include *.php -Recurse | ForEach-Object { php -l $_ }
+        shell: pwsh
