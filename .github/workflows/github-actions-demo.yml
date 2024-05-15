@@ -4,18 +4,16 @@ on:
     branches:
       - master
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
+    needs: test
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Lint PHP files
-        run: Get-ChildItem -Path . -Include *.php -Recurse | ForEach-Object { php -l $_ }
-        shell: pwsh
-
-      - name: Deploy to server
-        run: |
-          scp -r * ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:${{ secrets.REMOTE_PATH }}
-          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} 'cd ${{ secrets.REMOTE_PATH }} && ./deploy.sh'
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd chibis6b.beget.tech/public_html
+            git pull origin master
