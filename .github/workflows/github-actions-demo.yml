@@ -19,4 +19,4 @@ jobs:
         if: success()
         run: |
           scp -r * chibis6b@chibis6b.beget.tech:/chibis6b.beget.tech/public_html
-          ssh chibis6b@chibis6b.beget.tech 'cd /chibis6b.beget.tech/public_html && ./deploy.sh'
+          ssh -T chibis6b@chibis6b.beget.tech 'cd /chibis6b.beget.tech/public_html && ./deploy.sh'
