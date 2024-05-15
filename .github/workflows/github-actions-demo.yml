@@ -18,5 +18,5 @@ jobs:
       - name: Deploy to server
         if: success()
         run: |
-          scp -r * ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:${{ secrets.REMOTE_PATH }}/public_html
-          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} 'cd ${{ secrets.REMOTE_PATH }}/public_html && ./deploy.sh'
+          scp -r * ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:${{ secrets.REMOTE_PATH }}/htdocs
+          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} 'cd ${{ secrets.REMOTE_PATH }}/htdocs && ./deploy.sh'
