@@ -14,3 +14,9 @@ jobs:
       - name: Lint PHP files
         run: Get-ChildItem -Path . -Include *.php -Recurse | ForEach-Object { php -l $_ }
         shell: pwsh
+
+      - name: Deploy to server
+        if: success()
+        run: |
+          scp -r * chibis6b@chibis6b.beget.tech:/chibis6b.beget.tech/public.html
+          ssh chibis6b@chibis6b.beget.tech 'cd /chibis6b.beget.tech/public.html && ./deploy.sh'
