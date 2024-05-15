@@ -18,5 +18,5 @@ jobs:
       - name: Deploy to server
         if: success()
         run: |
-          scp -r * chibis6b@chibis6b.beget.tech:/chibis6b.beget.tech/public_html
-          ssh -T chibis6b@chibis6b.beget.tech 'cd /chibis6b.beget.tech/public_html && ./deploy.sh'
+          scp -r * ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:${{ secrets.REMOTE_PATH }}/public_html
+          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} 'cd ${{ secrets.REMOTE_PATH }}/public_html && ./deploy.sh'
