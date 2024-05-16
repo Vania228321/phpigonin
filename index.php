@@ -26,7 +26,7 @@
                     <div class="header-middle">
                         <div class="header-contact">
                             <a class="header-phone" href="tel: +79278271667">+7(927) 827-16-67</a>
-                            <a target="_blank" href="https://yandex.ru/maps/-/CDuYNE7E" class="header-address">г. Ульяновск ул. Минаева 55555</a>
+                            <a target="_blank" href="https://yandex.ru/maps/-/CDuYNE7E" class="header-address">г. Ульяновск ул. Минаева 12345</a>
                         </div>
 
                         <div class="header-search">
