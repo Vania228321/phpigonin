@@ -23,6 +23,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          server-dir: chibis6b.beget.tech/public_html
           script: |
             cd chibis6b.beget.tech/public_html
             git pull origin master
