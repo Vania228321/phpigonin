@@ -9,8 +9,6 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
 
     - name: Lint PHP files
       run: Get-ChildItem -Path . -Include *.php -Recurse | ForEach-Object { php -l $_ }
