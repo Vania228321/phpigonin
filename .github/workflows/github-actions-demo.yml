@@ -1,26 +1,20 @@
-name: GitHub Actions Demo
+name: Deploy to Hosting
 on:
   push:
     branches:
-    - master
+      - master
+
 jobs:
-  build:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Lint PHP files
-        run: Get-ChildItem -Path . -Include *.php -Recurse | ForEach-Object { php -l $_ }
-        shell: pwsh
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy
-        uses: appleboy/ssh-action@master
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Hosting
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: chibis6b.beget.tech/public_html
