@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
         <title>BrandLook</title>
     </head>
+
     <body>
 
         <header class="header">
@@ -36,7 +37,7 @@
 
 
                         <nav class="header-nav">
-                            <a class="header-menu" href="index.php">Главная</a>
+                            <a class="header-menu" href="index.php">Главная222</a>
                             <a class="header-menu" href="catalog/index.php">Каталог</a>
                             <a class="header-menu" href="partners/index.php">Наши партнеры</a>
                             <a class="header-menu" href="about/index.php">О нас</a>
