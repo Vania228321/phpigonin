@@ -1,4 +1,5 @@
-<?php error_reporting(-1); session_start(); ?>
+<?php error_reporting(-1); session_start();
+echo "Hello, World!!!!!!"?>
 <?php if (!isset($_SESSION['auth'])): ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -37,7 +38,7 @@
 
 
                         <nav class="header-nav">
-                            <a class="header-menu" href="index.php">Главная</a>
+                            <a class="header-menu" href="index.php">Главная222</a>
                             <a class="header-menu" href="catalog/index.php">Каталог</a>
                             <a class="header-menu" href="partners/index.php">Наши партнеры</a>
                             <a class="header-menu" href="about/index.php">О нас</a>
