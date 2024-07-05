@@ -30,9 +30,8 @@ jobs:
   my_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Display Secret
-      env:
-        MY_SECRET: ${{ secrets.MY_SECRET }}
-      run: echo "Secret value is $MY_SECRET"
-
+      - name: Retrieve secret
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+        run: echo "ЗНАЧЕНИЕ МОЕГО СЕКРЕТА - $MY_SECRET"
         
