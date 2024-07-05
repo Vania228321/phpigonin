@@ -33,5 +33,5 @@ jobs:
       - name: Retrieve secret
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
-        run: echo "ЗНАЧЕНИЕ МОЕГО СЕКРЕТА - $MY_SECRET"
+        run: echo "ЗНАЧЕНИЕ МОЕГО СЕКРЕТА - " + ${{secrets.FTP_SERVER}}
         
